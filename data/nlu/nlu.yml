@@ -5,8 +5,8 @@ nlu:
     - are you a bot?
     - am i speaking to an ai?
     - are you a human or a bot?
-    - are you real? 
-    - are you virtual? 
+    - are you real?
+    - are you virtual?
     - are you an ai?
     - aren't you a bot
     - are you a chatbot
@@ -213,7 +213,6 @@ nlu:
     - good bye
     - good bye rasa bot!
     - good night
-    - goodbye
     - goodbye.
     - goodnight
     - gotta go
@@ -355,6 +354,8 @@ nlu:
     - percy donald
     - danIelle smilanich
     - [Gringtos](credit_card)
+    - lost my [card]{"entity": "account_type", "value": "credit"}
+    - replace [card]{"entity": "account_type", "value": "credit"}
 - intent: pay_cc
   examples: |
     - I would like to pay the [minimum balance](amount-of-money) on my [embelm](credit_card) [card](account_type)
@@ -471,7 +472,6 @@ nlu:
     - can I transfer money to my [mom](PERSON)
     - I want to pay [Bert](PERSON)
     - pay my friend
-    - transfer money
     - I want to transfer $100 to [Tommy](PERSON)
     - i want to transfer $400 to [Akela](PERSON)
     - I want to pay [Paula Handy](PERSON)
@@ -512,6 +512,7 @@ nlu:
     - Please transfer 50 dollars to [Andreas](PERSON)
     - I would like to transfer money to [Philipp](PERSON)
     - I would like to transfer 50$ to [Joschka](PERSON)
+    - transfer money
 - intent: check_recipients
   examples: |
     - Who can I send money to?
@@ -554,8 +555,6 @@ nlu:
     - come back
     - cool! can I do something else here?
     - hello what can you do for me
-    - help
-    - help me
     - help please
     - help pls
     - help?
@@ -578,7 +577,6 @@ nlu:
     - talk to human
     - i want human :(
     - can i talk to human
-    - i want to talk to a human
     - i want to speak to human
     - can i talk to a real person?
     - connect me to a real person
@@ -631,3 +629,6 @@ nlu:
     - balance
     - full
     - full balance
+- intent: card_statement
+  examples: |
+    - check [credit card]{"entity": "account_type", "value": "credit"} [statement](vendor_name)
